@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Russian Roulette</title>
-		<link rel="stylesheet" type="text/css" href="content/css/style.css">
+		<script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
 	</head>
 	<body>
 		<div>
@@ -15,7 +15,7 @@
                     <legend>Välj din cylinder position:</legend>
                     <ol>
                         <li>
-                            <input type="radio" name="cylinderPosition" value="1">
+                            <input type="radio" name="cylinderPosition" checked="checked" value="1">
                         </li>
                         <li>
                             <input type="radio" name="cylinderPosition" value="2">
@@ -33,11 +33,12 @@
                             <input type="radio" name="cylinderPosition" value="6">
                         </li>
                    </ol>
-                   <input type="submit" value="Snurra">
+                   <input type="submit" value="Snurra" id="shotPistol">
                 </form>
 			</div>
 			<div id="result">
 			</div>
 		</div>
+		<script type="text/javascript" src="apps/RussianRoulette/scripts/RussianRoulette.js"></script>
 	</body>
 </html>
