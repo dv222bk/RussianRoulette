@@ -17,7 +17,7 @@ if(intval($decodedJSON->cylinder) < 1 || intval($decodedJSON->cylinder) > 6) {
 }
 
 $result = FALSE;
-if(mt_rand(1,6) == $decodedJSON->cylinder) {
+if(mt_rand(1,6) == intval($decodedJSON->cylinder)) {
 	$result = !$result;
 }
 
