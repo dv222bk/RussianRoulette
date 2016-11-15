@@ -10,7 +10,7 @@ $(document).ready(
 );
 
 /**
- * A function to fetch the result of the roulette from the server and display
+ * Fetch the result of the roulette from the server
  */
 RussianRoulette.getResult = function() {
 	var JSONRequest = JSON.stringify(
@@ -31,6 +31,12 @@ RussianRoulette.getResult = function() {
 	});
 };
 
+/**
+ * Print a result to the result div
+ *  
+ * @param string result
+ * String to print as result
+ */
 RussianRoulette.showResult = function(result) {
 	$('#result').empty().append('<p>' + result + '</p>');
 };
