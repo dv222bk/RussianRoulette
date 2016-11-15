@@ -7,12 +7,12 @@ $request = file_get_contents('php://input');
 $decodedJSON = json_decode($request);
 
 if(json_last_error() != JSON_ERROR_NONE) {
-	echo json_encode(['errorMsg' => 'Did not recieve a valid JSON']);
+	echo json_encode(['errorMsg' => 'Emottog ej en valid JSON']);
 	exit();
 }
 
 if(intval($decodedJSON->cylinder) < 1 || intval($decodedJSON->cylinder) > 6) {
-	echo json_encode(['errorMsg' => 'Did not recieve a valid cylinder choice']);
+	echo json_encode(['errorMsg' => 'Emottog ej en valid cylinderposition']);
 	exit();
 }
 
