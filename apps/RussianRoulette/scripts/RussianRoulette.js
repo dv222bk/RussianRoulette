@@ -18,17 +18,17 @@ RussianRoulette.getResult = function() {
 			'cylinder' : $("input:radio[name=cylinderPosition]:checked").val()
 		}
 	);
-	var request = $.post('apps/RussianRoulette/GetResult.php', JSONRequest);
-	request.done(function(data) {
-		if(data.hasOwnProperty('errorMsg')) {
-			RussianRoulette.showResult(data.errorMsg);
-		} else {
-			data.hit ? RussianRoulette.showResult('BOM') : RussianRoulette.showResult('Du klarade dig');
-		}
-	});
-	request.fail(function() {
-		RussianRoulette.showResult('Kunde inte ansluta till servern');
-	});
+	$.post('apps/RussianRoulette/GetResult.php', JSONRequest)
+		.done(function(data) {
+			if(data.hasOwnProperty('errorMsg')) {
+				RussianRoulette.showResult(data.errorMsg);
+			} else {
+				data.hit ? RussianRoulette.showResult('BOM') : RussianRoulette.showResult('Du klarade dig');
+			}
+		})
+		.fail(function() {
+			RussianRoulette.showResult('Kunde inte ansluta till servern');
+		});
 };
 
 /**
